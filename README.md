@@ -39,6 +39,38 @@ npm start
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Utility-first CSS framework
 - **React 18** - UI library
+- **Google Analytics** - Analytics and event tracking via @next/third-parties
+
+## Google Analytics Setup
+
+1. Get your Google Analytics Measurement ID (GA4) from [Google Analytics](https://analytics.google.com/)
+2. Create a `.env.local` file in the root directory:
+   ```
+   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+   ```
+3. Replace `G-XXXXXXXXXX` with your actual Measurement ID
+4. Restart your development server
+
+### Event Tracking
+
+Use the analytics utilities from `lib/analytics.ts` to track custom events:
+
+```typescript
+import { analytics } from '@/lib/analytics';
+
+// Track button clicks
+analytics.trackClick('Contact Button', 'header');
+
+// Track link clicks
+analytics.trackLink('https://example.com', 'External Link');
+
+// Track custom events
+import { trackEvent } from '@/lib/analytics';
+trackEvent('custom_event', {
+  event_category: 'engagement',
+  event_label: 'custom_action'
+});
+```
 
 ## Project Structure
 

@@ -1,6 +1,25 @@
+"use client";
+
+import { usePageEngagement } from "@/hooks/useAnalytics";
+import { trackEvent } from "@/lib/analytics";
+
 export default function Home() {
+  // Track page engagement metrics
+  usePageEngagement();
+
+  // Track when user views the main content
+  const handleContentView = () => {
+    trackEvent("content_view", {
+      event_category: "engagement",
+      content_type: "homepage",
+    });
+  };
+
   return (
-    <main className="min-h-screen flex items-center justify-center px-4 py-16">
+    <main 
+      className="min-h-screen flex items-center justify-center px-4 py-16"
+      onMouseEnter={handleContentView}
+    >
       <div className="max-w-2xl w-full space-y-8">
         {/* Header */}
         <div className="space-y-4">
