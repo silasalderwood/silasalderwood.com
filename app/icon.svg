@@ -6,7 +6,7 @@
       font-weight: 800;
       font-style: normal;
     }
-    .tile { fill: #3061d8; }
+    .tile { fill: #0a0a0a; }
     .mark {
       fill: #ffffff;
       font-family: "Plus Jakarta Sans", Arial, sans-serif;
