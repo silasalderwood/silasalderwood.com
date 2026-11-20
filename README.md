@@ -59,6 +59,9 @@ are projects to show. The numbering of the sections is in `app/page.tsx`.
   near-black in dark mode. Both themes follow the operating system setting.
 - **Tokens**: colours and fonts are CSS custom properties in `app/globals.css`,
   exposed to Tailwind in `tailwind.config.ts`.
+- **Motion**: the hero arrives word by word, the section rules draw themselves as
+  you reach them, and the header tracks how far down the page you are. Transform
+  and opacity only, and all of it is off under `prefers-reduced-motion`.
 
 ## Google Analytics Setup
 
