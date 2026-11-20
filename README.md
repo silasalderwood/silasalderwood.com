@@ -37,8 +37,8 @@ pnpm start
 
 ## Editing the site
 
-All copy, links and metadata live in **`lib/site.ts`** — one file, no components to
-touch. The site renders Profile, Principles, Currently and Contact from it.
+All copy, links and metadata live in **`lib/site.ts`**, one file, no components to
+touch. The site renders About, How I work, Now and Contact from it.
 
 ```ts
 export const site = {
@@ -48,8 +48,8 @@ export const site = {
 };
 ```
 
-A "Selected work" section can be added between Profile and Principles once there
-are projects to show — the numbering of the sections is in `app/page.tsx`.
+A "Selected work" section can be added between About and How I work once there
+are projects to show. The numbering of the sections is in `app/page.tsx`.
 
 ## Design
 
