@@ -5,21 +5,40 @@ import { LocalTime } from "@/components/LocalTime";
 import { site } from "@/lib/site";
 
 const nav = [
-  { label: "Profile", href: "#profile" },
-  { label: "Principles", href: "#principles" },
-  { label: "Currently", href: "#currently" },
+  { label: "About", href: "#about" },
+  { label: "How I work", href: "#how-i-work" },
+  { label: "Now", href: "#now" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      setScrolled(window.scrollY > 12);
+
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0);
+    };
+
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   // Close the mobile menu on Escape, and lock the page while it is open.
@@ -92,7 +111,14 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {/* Mobile navigation — a full-height overlay so the page never shows through. */}
+      {/* How far down the page you are. */}
+      <div
+        className="h-px origin-left bg-accent transition-transform duration-150 ease-out"
+        style={{ transform: `scaleX(${progress})` }}
+        aria-hidden="true"
+      />
+
+      {/* Mobile navigation: a full-height overlay so the page never shows through. */}
       <div
         id="mobile-nav"
         aria-hidden={!open}
@@ -106,7 +132,10 @@ export function SiteHeader() {
               <a
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex items-baseline justify-between py-5 text-lg"
+                style={{ animationDelay: `${index * 60}ms` }}
+                className={`flex items-baseline justify-between py-5 text-lg ${
+                  open ? "animate-rise" : ""
+                }`}
               >
                 {item.label}
                 <span className="label">

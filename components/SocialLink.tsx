@@ -12,9 +12,9 @@ export function SocialLinkRow({ link }: { link: SocialLink }) {
     <TrackedLink
       href={link.href}
       linkText={link.label}
-      className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4 gap-y-1 border-b border-line py-5 transition-colors duration-300 hover:border-line-strong sm:grid-cols-[7rem_1fr_auto]"
+      className="row-tint group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4 gap-y-1 border-b border-line px-2 -mx-2 sm:grid-cols-[7rem_1fr_auto]"
     >
-      <span className="font-mono text-xs uppercase tracking-[0.14em] text-ink-faint">
+      <span className="font-mono text-xs uppercase tracking-[0.14em] text-ink-faint transition-colors duration-300 group-hover:text-accent">
         {link.label}
       </span>
       <span className="text-base text-ink sm:text-lg">{link.handle}</span>

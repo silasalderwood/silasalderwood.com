@@ -28,7 +28,12 @@ export function LocalTime({ withCity = true }: { withCity?: boolean }) {
   return (
     <span className="label tabular-nums">
       {withCity && <span className="hidden sm:inline">Zug&nbsp;</span>}
-      <span className={time ? "opacity-100" : "opacity-0"}>{time ?? "--:--"}</span>
+      <span
+        key={time ?? "empty"}
+        className={`inline-block ${time ? "animate-tick opacity-100" : "opacity-0"}`}
+      >
+        {time ?? "--:--"}
+      </span>
     </span>
   );
 }
