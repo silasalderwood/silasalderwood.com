@@ -1,12 +1,12 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
-export const alt = `${site.name} — ${site.role} at ${site.company}`;
+export const alt = `${site.name}: ${site.role} at ${site.company}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 /**
- * Social card. Deliberately typographic — the same cobalt as the site's accent.
+ * Social card. Deliberately typographic, in the same cobalt as the site accent.
  */
 export default function OpengraphImage() {
   return new ImageResponse(
