@@ -220,9 +220,9 @@ export default function Home() {
 
               <Reveal delay={240}>
                 <p className="mt-8 max-w-prose text-sm leading-relaxed text-ink-faint">
-                  Happy to talk about systems design, C, and the infrastructure
-                  underneath. This site is a work in progress, so there is more to
-                  come.
+                  Happy to talk about systems design, architecture, and the
+                  infrastructure underneath. This site is a work in progress, so
+                  there is more to come.
                 </p>
               </Reveal>
             </div>

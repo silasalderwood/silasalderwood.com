@@ -7,7 +7,7 @@ export const site = {
   name: "Silas Alderwood",
   title: "Silas Alderwood, Systems Engineer",
   description:
-    "Silas Alderwood, systems engineer at Forgevine in Zug, Switzerland. Writes C and builds software that behaves the way you left it.",
+    "Silas Alderwood, systems engineer at Forgevine in Zug, Switzerland. Builds software that behaves the way you left it.",
   url: "https://www.silasalderwood.com",
   locale: "en",
   location: "Zug, Switzerland",
@@ -48,13 +48,13 @@ export const about = {
   heading: "Most things I build are meant to stay put.",
   paragraphs: [
     "I work at Forgevine, where I spend most of my time on systems that should not change underneath you. State gets decided once, the boundaries are explicit, and nothing quietly rewrites itself later. It sounds fussy until something breaks at 3am and you can still tell exactly what happened.",
-    "A lot of that is C, because C does not let you pretend. You decide the shape of the data, you account for every byte, and you end up with programs that do one thing and keep doing it. The rest is the unglamorous plumbing that holds all of it up.",
+    "A lot of it happens before anything gets built, while the shape of the data is still being decided. Get that wrong and everything above it is standing on sand. Get it right and the rest is mostly unglamorous plumbing, which is exactly how I like it.",
   ],
 };
 
 export const currently = [
   "At Forgevine, on systems that stay put.",
-  "Writing C. Small programs, sharp edges.",
+  "Small programs, sharp edges, boring tools.",
   "In Zug, Switzerland, on GMT+1.",
 ];
 
@@ -65,7 +65,7 @@ export const principles = [
   },
   {
     title: "Small programs, honest tools",
-    body: "C, mostly, because C makes you account for every byte. A tool that does one thing well is worth more than one that does everything badly.",
+    body: "A tool that does one thing well is worth more than one that does everything badly. The same goes for a service, a schema, a script. Small and honest beats big and clever.",
   },
   {
     title: "Boring is a feature",
